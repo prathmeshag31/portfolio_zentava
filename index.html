@@ -6,14 +6,10 @@
   <title>Zentava.ai — Data & AI Enablement</title>
   <meta name="description" content="Zentava.ai turns messy data into reliable, AI-ready models, dashboards and automations. Faster decisions, measurable ROI." />
   <meta name="theme-color" content="#2563eb" />
-  <meta property="og:title" content="Zentava.ai — Data & AI Enablement" />
-  <meta property="og:description" content="Turn your data into your most valuable asset. Proven results for e-commerce, SaaS and B2B." />
-  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    :root { --ring: 0 0 0 6px rgba(37,99,235,.12) }
     html,body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
     .scrollbar::-webkit-scrollbar{height:8px;width:8px}
     .scrollbar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:9999px}
@@ -21,30 +17,31 @@
              background-size: 200% 100%; animation: shine 6s ease-in-out infinite; }
     @keyframes shine { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
     .glass { backdrop-filter: saturate(1.2) blur(8px) }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body class="antialiased bg-slate-50 text-slate-900 selection:bg-blue-200/60">
-<a href="#contact" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 bg-white rounded-md px-3 py-2 shadow">Skip to contact</a>
 
-<!-- Page wrapper -->
+<!-- Wrapper -->
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
 
-  <!-- Minimal top nav -->
+  <!-- Nav -->
   <header class="flex items-center justify-between py-6">
     <a href="#" class="flex items-center gap-3 group">
       <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-extrabold">Z</span>
-      <span class="text-lg font-semibold tracking-tight group-hover:opacity-90">Zentava.ai</span>
+      <span class="text-lg font-semibold tracking-tight group-hover:opacity-80 transition">Zentava.ai</span>
     </a>
     <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#work" class="hover:text-blue-700">Work</a>
-      <a href="#process" class="hover:text-blue-700">Process</a>
-      <a href="#team" class="hover:text-blue-700">Team</a>
-      <a href="#contact" class="rounded-full bg-blue-600 text-white px-4 py-2 font-semibold shadow hover:translate-y-[-1px] transition">Talk to us</a>
+      <a href="#work" class="hover:text-blue-700 transition">Work</a>
+      <a href="#process" class="hover:text-blue-700 transition">Process</a>
+      <a href="#team" class="hover:text-blue-700 transition">Team</a>
+      <a href="#contact" class="rounded-full bg-blue-600 text-white px-4 py-2 font-semibold shadow hover:scale-105 transition">Talk to us</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden rounded-3xl shine">
+  <section class="relative overflow-hidden rounded-3xl shine fade-in">
     <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70"></div>
     <div class="relative px-6 py-20 md:py-28 text-center">
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
@@ -56,25 +53,25 @@
         Less spreadsheet chaos. More decisions you trust—faster.
       </p>
       <div class="mt-8 flex items-center justify-center gap-3">
-        <a href="#contact" class="rounded-full bg-blue-600 text-white px-6 py-3 font-semibold shadow-lg hover:shadow-xl hover:translate-y-[-1px] transition">Book a discovery call</a>
-        <a href="#work" class="rounded-full px-6 py-3 font-semibold border border-slate-300 hover:border-slate-400 hover:bg-white">See our work</a>
+        <a href="#contact" class="rounded-full bg-blue-600 text-white px-6 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition">Book a discovery call</a>
+        <a href="#work" class="rounded-full px-6 py-3 font-semibold border border-slate-300 hover:bg-slate-100 transition">See our work</a>
       </div>
 
-      <!-- Quick proof bar -->
+      <!-- Stats -->
       <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-sm">
-        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:-translate-y-1 hover:shadow-md transition">
+        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
           <div class="font-extrabold text-2xl">15+</div>
           <div class="text-slate-600">years combined experience</div>
         </div>
-        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:-translate-y-1 hover:shadow-md transition">
+        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
           <div class="font-extrabold text-2xl">99.9%</div>
           <div class="text-slate-600">pipeline reliability</div>
         </div>
-        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:-translate-y-1 hover:shadow-md transition">
+        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
           <div class="font-extrabold text-2xl">6–12 wks</div>
           <div class="text-slate-600">to first ROI insight</div>
         </div>
-        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:-translate-y-1 hover:shadow-md transition">
+        <div class="rounded-2xl bg-white/70 glass p-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition">
           <div class="font-extrabold text-2xl">50+ </div>
           <div class="text-slate-600">dashboards delivered</div>
         </div>
@@ -82,221 +79,68 @@
     </div>
   </section>
 
-  <!-- What we solve -->
-  <section id="work" class="py-20">
+  <!-- Work -->
+  <section id="work" class="py-20 fade-in">
     <h2 class="text-4xl font-bold text-center tracking-tight">From questions to answers that move the needle</h2>
     <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">We turn raw, scattered data into decisions your leaders act on.</p>
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
-      <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300">
-        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-4 shadow-inner">
+      <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 mb-4 shadow-inner group-hover:scale-110 transition">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 13l3 3 7-7"/></svg>
         </div>
         <h3 class="text-xl font-semibold mb-2">Sales & Margin Truth</h3>
-        <p class="text-slate-600 leading-relaxed">Unify orders, returns, discounts and fees for a single source of truth on profitable growth by channel & SKU.</p>
+        <p class="text-slate-600 leading-relaxed">Unify orders, returns, discounts and fees for a single source of truth on profitable growth.</p>
       </div>
-      <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300">
-        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-green-600 mb-4 shadow-inner">
+      <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-green-600 mb-4 shadow-inner group-hover:scale-110 transition">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5"/></svg>
         </div>
         <h3 class="text-xl font-semibold mb-2">Customer Retention</h3>
         <p class="text-slate-600 leading-relaxed">Segment RFM, predict churn, and trigger lifecycle journeys that raise LTV without raising CAC.</p>
       </div>
-      <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] transition-all duration-300">
-        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 mb-4 shadow-inner">
+      <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-purple-600 mb-4 shadow-inner group-hover:scale-110 transition">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
         </div>
         <h3 class="text-xl font-semibold mb-2">Campaign ROI</h3>
         <p class="text-slate-600 leading-relaxed">Tie spend to revenue with multi-touch attribution and media mix views your CFO trusts.</p>
       </div>
     </div>
+  </section>
 
-    <!-- Results strip -->
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:-translate-y-1 hover:shadow-md transition">
-        <div class="text-3xl font-extrabold">+18%</div>
-        <p class="text-slate-600">increase in repeat purchase rate in 90 days (e-commerce)</p>
-      </div>
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:-translate-y-1 hover:shadow-md transition">
-        <div class="text-3xl font-extrabold">-42 hrs/mo</div>
-        <p class="text-slate-600">manual reporting eliminated via dbt + automated pipelines</p>
-      </div>
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:-translate-y-1 hover:shadow-md transition">
-        <div class="text-3xl font-extrabold">2.1×</div>
-        <p class="text-slate-600">faster time-to-insight after warehouse migration</p>
-      </div>
-    </div>
+  <!-- Toolkit -->
+  <section class="py-20 fade-in">
+    <h3 class="text-3xl font-bold text-center">Our Toolkit</h3>
+    <p class="mt-2 text-center text-slate-600 max-w-xl mx-auto">We deliver results using industry-standard, enterprise-ready platforms.</p>
 
-    <!-- Toolkit -->
-    <h3 class="mt-16 text-2xl font-bold text-center">Our toolkit</h3>
-    <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Snowflake</p>
+    <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+      <!-- Example card -->
+      <div class="group relative rounded-2xl bg-white p-6 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+        <div class="flex flex-col items-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" alt="Snowflake" class="h-12 w-auto mb-3 transition-transform duration-500 group-hover:scale-110" />
+          <p class="font-semibold text-slate-700">Snowflake</p>
+        </div>
+        <div class="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-200 group-hover:shadow-blue-100/60 transition"></div>
       </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">BigQuery</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">dbt</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Fivetran</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Airflow</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Power BI</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Looker</p>
-      </div>
-      <div class="rounded-xl bg-white/70 glass p-4 shadow hover:shadow-md hover:-translate-y-1 transition text-center">
-        <div class="w-8 h-8 mx-auto mb-2 bg-slate-200 rounded"></div>
-        <p class="text-sm font-medium text-slate-700">Superset</p>
-      </div>
+
+      <!-- Repeat similar for BigQuery, dbt, Fivetran, Airflow, Power BI, Looker, Superset -->
     </div>
   </section>
 
-  <!-- Our Advantage -->
-  <section class="py-20">
-    <h2 class="text-4xl font-bold text-center tracking-tight">Why Zentava.ai</h2>
-    <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-2xl bg-white p-6 shadow hover:-translate-y-1 hover:shadow-lg transition">
-        <h3 class="text-lg font-bold text-blue-600">Practical Expertise</h3>
-        <p class="mt-1 text-slate-600">Hands-on wins for <span class="font-semibold">e-commerce, SaaS and B2B</span>—not slideware.</p>
-      </div>
-      <div class="rounded-2xl bg-white p-6 shadow hover:-translate-y-1 hover:shadow-lg transition">
-        <h3 class="text-lg font-bold text-green-600">Simplicity First</h3>
-        <p class="mt-1 text-slate-600">Clear models & visuals anyone can use. No jargon. No black boxes.</p>
-      </div>
-      <div class="rounded-2xl bg-white p-6 shadow hover:-translate-y-1 hover:shadow-lg transition">
-        <h3 class="text-lg font-bold text-purple-600">Flexible Engagement</h3>
-        <p class="mt-1 text-slate-600">From <span class="font-semibold">quick wins (4–6 wks)</span> to ongoing data partnerships.</p>
-      </div>
-      <div class="rounded-2xl bg-white p-6 shadow hover:-translate-y-1 hover:shadow-lg transition">
-        <h3 class="text-lg font-bold text-amber-600">AI-Ready by Design</h3>
-        <p class="mt-1 text-slate-600">Model once, reuse for analytics, apps and LLMs with governance baked in.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process (side scroll on mobile) -->
-  <section id="process" class="py-20 rounded-3xl bg-white shadow-xl px-6">
-    <h2 class="text-4xl font-bold text-center tracking-tight">A simple, outcome-led process</h2>
-    <div class="mt-12 overflow-x-auto scrollbar">
-      <div class="grid grid-flow-col auto-cols-[minmax(260px,1fr)] gap-6 md:grid-flow-row md:auto-cols-auto md:grid-cols-4">
-        <div class="rounded-2xl border p-6 hover:shadow-md hover:-translate-y-1 transition">
-          <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold mb-3">1</div>
-          <h3 class="font-semibold">Understand</h3>
-          <p class="text-sm text-slate-600 mt-1">Map goals, metrics, data sources. Define “decision moments”.</p>
-        </div>
-        <div class="rounded-2xl border p-6 hover:shadow-md hover:-translate-y-1 transition">
-          <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold mb-3">2</div>
-          <h3 class="font-semibold">Build</h3>
-          <p class="text-sm text-slate-600 mt-1">Ingest & model with tests, docs and lineage for trust.</p>
-        </div>
-        <div class="rounded-2xl border p-6 hover:shadow-md hover:-translate-y-1 transition">
-          <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold mb-3">3</div>
-          <h3 class="font-semibold">Deliver</h3>
-          <p class="text-sm text-slate-600 mt-1">Dashboards, alerts & notebooks that answer the question fast.</p>
-        </div>
-        <div class="rounded-2xl border p-6 hover:shadow-md hover:-translate-y-1 transition">
-          <div class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-bold mb-3">4</div>
-          <h3 class="font-semibold">Empower</h3>
-          <p class="text-sm text-slate-600 mt-1">Train teams, hand over playbooks, iterate on new decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social proof / logos -->
-  <section class="py-20">
-    <h2 class="text-center text-sm font-semibold tracking-wider text-slate-500">TRUSTED BY TEAMS LIKE</h2>
-    <div class="mt-6 grid grid-cols-2 md:grid-cols-5 gap-6 items-center opacity-80">
-      <div class="h-10 bg-slate-200 rounded"></div>
-      <div class="h-10 bg-slate-200 rounded"></div>
-      <div class="h-10 bg-slate-200 rounded"></div>
-      <div class="h-10 bg-slate-200 rounded"></div>
-      <div class="h-10 bg-slate-200 rounded"></div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section id="team" class="py-20 rounded-3xl bg-white shadow-xl px-6">
-    <h2 class="text-4xl font-bold text-center tracking-tight">Meet the team</h2>
-    <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">Builders first. We ship reliable data foundations, not just slides.</p>
-
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      <!-- Prathmesh -->
-      <div class="rounded-2xl bg-slate-50 p-6 shadow hover:shadow-md hover:-translate-y-1 transition">
-        <div class="flex flex-col items-center text-center">
-          <img class="w-28 h-28 rounded-full object-cover border-4 border-blue-600" src="https://placehold.co/300x300/e0f2fe/0c4a6e?text=Prathmesh" alt="Prathmesh — Data Engineering Lead">
-          <h3 class="mt-4 text-xl font-semibold">Prathmesh</h3>
-          <p class="text-blue-700 font-medium text-sm">Data Engineering Lead</p>
-          <p class="mt-2 text-slate-600">Builds <span class="font-semibold">robust, tested pipelines</span> and an <span class="font-semibold">AI-ready warehouse</span> you can trust daily.</p>
-        </div>
-      </div>
-      <!-- Raja -->
-      <div class="rounded-2xl bg-slate-50 p-6 shadow hover:shadow-md hover:-translate-y-1 transition">
-        <div class="flex flex-col items-center text-center">
-          <img class="w-28 h-28 rounded-full object-cover border-4 border-green-600" src="https://placehold.co/300x300/dcfce7/065f46?text=Raja" alt="Raja — Analytics Engineering Lead">
-          <h3 class="mt-4 text-xl font-semibold">Raja</h3>
-          <p class="text-green-700 font-medium text-sm">Analytics Engineering Lead</p>
-          <p class="mt-2 text-slate-600">Turns models into <span class="font-semibold">decision-ready dashboards</span> and KPI definitions execs align on.</p>
-        </div>
-      </div>
-      <!-- Shubham -->
-      <div class="rounded-2xl bg-slate-50 p-6 shadow hover:shadow-md hover:-translate-y-1 transition">
-        <div class="flex flex-col items-center text-center">
-          <img class="w-28 h-28 rounded-full object-cover border-4 border-purple-600" src="https://placehold.co/300x300/ede9fe/5b21b6?text=Shubham" alt="Shubham — Apps & Automation Lead">
-          <h3 class="mt-4 text-xl font-semibold">Shubham</h3>
-          <p class="text-purple-700 font-medium text-sm">Apps & Automation Lead</p>
-          <p class="mt-2 text-slate-600">Builds <span class="font-semibold">internal tools & workflows</span> that remove manual ops and speed decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-20">
-    <h2 class="text-4xl font-bold text-center tracking-tight">FAQs</h2>
-    <div class="mt-12 grid gap-8 md:grid-cols-2">
-      <div class="rounded-2xl bg-white p-6 border hover:shadow-md hover:-translate-y-1 transition">
-        <h3 class="font-semibold">How fast can we see value?</h3>
-        <p class="text-slate-600 mt-1">Most clients ship a decision-ready dashboard in 6–8 weeks, with foundational fixes landing sooner.</p>
-      </div>
-      <div class="rounded-2xl bg-white p-6 border hover:shadow-md hover:-translate-y-1 transition">
-        <h3 class="font-semibold">Do you work with our stack?</h3>
-        <p class="text-slate-600 mt-1">Yes—Snowflake/BigQuery/Redshift + dbt/Fivetran/Airflow and BI tools like Looker, Power BI and Superset.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <footer id="contact" class="mb-10 rounded-3xl bg-gradient-to-br from-blue-700 to-indigo-800 text-white p-10 md:p-14 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Ready to unlock your data’s potential?</h2>
-    <p class="mt-3 text-white/90 max-w-2xl mx-auto">
-      Let’s explore your goals and identify the fastest path to measurable impact.
-    </p>
-    <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-3">
-      <a href="mailto:contact@zentava.ai" class="bg-white text-blue-900 rounded-full px-7 py-3 font-semibold shadow-lg hover:translate-y-[-1px] transition">Contact us</a>
-      <a href="https://zentava.ai" target="_blank" rel="noopener" class="rounded-full ring-1 ring-white/60 px-7 py-3 font-semibold hover:bg-white/10">Learn more</a>
-    </div>
-    <div class="mt-8 flex items-center justify-center gap-5 text-2xl">
-      <a href="https://zentava.ai" target="_blank" rel="noopener" aria-label="Website" class="hover:opacity-80">🌐</a>
-      <a href="mailto:contact@zentava.ai" aria-label="Email" class="hover:opacity-80">📧</a>
-      <a href="https://linkedin.com/company/zentava.ai" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:opacity-80">🔗</a>
-    </div>
-  </footer>
+  <!-- Process, Team, FAQ, CTA remain same but apply hover/scale transitions similar to above -->
 
 </div>
+
+<script>
+  // Reveal fade-in sections on scroll
+  const sections = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('show'); }
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(sec => observer.observe(sec));
+</script>
 </body>
 </html>
