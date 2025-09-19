@@ -1,207 +1,269 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zentava.ai — Data & AI Enablement</title>
-  <meta name="description" content="Zentava.ai turns messy data into reliable, AI-ready models, dashboards and automations. Faster decisions, measurable ROI." />
-  <meta name="theme-color" content="#2563eb" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    html,body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .shine { background: linear-gradient(110deg,#ffffff 30%,#f5f7fb 40%,#ffffff 60%);
-             background-size: 200% 100%; animation: shine 6s ease-in-out infinite; }
-    @keyframes shine { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
-    .glass { backdrop-filter: saturate(1.2) blur(8px) }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.show { opacity: 1; transform: translateY(0); }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zentava.ai — Data & AI Enablement</title>
+    <meta name="description" content="Zentava.ai turns messy data into reliable, AI-ready models, dashboards and automations. Faster decisions, measurable ROI." />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        html,body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+        .shine { background: linear-gradient(110deg,#ffffff 30%,#f5f7fb 40%,#ffffff 60%);
+                 background-size: 200% 100%; animation: shine 6s ease-in-out infinite; }
+        @keyframes shine { 0% { background-position: 0% 50% } 100% { background-position: 100% 50% } }
+        .glass { backdrop-filter: saturate(1.2) blur(8px) }
+        
+        /* Card-level animation */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.show { opacity: 1; transform: translateY(0); }
+        .animated-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .animated-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+        .animated-card .icon { transition: transform 0.3s ease-in-out; }
+        .animated-card:hover .icon { transform: scale(1.1); }
 
-    /* Vertical Auto Scroll */
-    .scroll-container {
-      height: 350px;
-      overflow: hidden;
-      position: relative;
-    }
-    .scroll-content {
-      display: flex;
-      flex-direction: column;
-      animation: scroll-vertical 15s linear infinite;
-    }
-    .scroll-container:hover .scroll-content {
-      animation-play-state: paused;
-    }
-    @keyframes scroll-vertical {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
-    }
-  </style>
+        /* Horizontal Auto Scroll */
+        .scrolling-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        .scrolling-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scrolling-container::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        .scrolling-container::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 10px;
+        }
+        .scrolling-container::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        .scroll-content {
+            display: inline-flex;
+            gap: 1.5rem; /* Equivalent to space-x-6 */
+        }
+        .scroll-item {
+            display: inline-block;
+            white-space: normal;
+            min-width: 250px;
+        }
+    </style>
 </head>
 <body class="antialiased bg-slate-50 text-slate-900 selection:bg-blue-200/60">
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
 
-  <!-- Nav -->
-  <header class="flex items-center justify-between py-6">
-    <a href="#" class="flex items-center gap-3 group">
-      <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-extrabold">Z</span>
-      <span class="text-lg font-semibold tracking-tight group-hover:opacity-80 transition">Zentava.ai</span>
-    </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#work" class="hover:text-blue-700 transition">Work</a>
-      <a href="#process" class="hover:text-blue-700 transition">Process</a>
-      <a href="#team" class="hover:text-blue-700 transition">Team</a>
-      <a href="#contact" class="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 font-semibold shadow hover:scale-105 transition">Talk to us</a>
-    </nav>
-  </header>
+    <!-- Nav -->
+    <header class="flex items-center justify-between py-6">
+        <a href="#" class="flex items-center gap-3 group">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-extrabold">Z</span>
+            <span class="text-lg font-semibold tracking-tight group-hover:opacity-80 transition">Zentava.ai</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#work" class="hover:text-blue-700 transition">Work</a>
+            <a href="#process" class="hover:text-blue-700 transition">Process</a>
+            <a href="#team" class="hover:text-blue-700 transition">Team</a>
+            <a href="#contact" class="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 font-semibold shadow hover:scale-105 transition">Talk to us</a>
+        </nav>
+    </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden rounded-3xl shine fade-in">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70"></div>
-    <div class="relative px-6 py-20 md:py-28 text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-        Turn <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">messy data</span> into
-        <span class="whitespace-nowrap">revenue-ready insights.</span>
-      </h1>
-      <p class="mx-auto mt-5 max-w-2xl text-lg md:text-xl text-slate-600">
-        We design reliable, <span class="font-semibold">AI-ready data models</span>, dashboards and automations.
-        Less spreadsheet chaos. More decisions you trust—faster.
-      </p>
-      <div class="mt-8 flex items-center justify-center gap-3">
-        <a href="#contact" class="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition">Book a discovery call</a>
-        <a href="#work" class="rounded-full px-6 py-3 font-semibold border border-slate-300 hover:bg-slate-100 transition">See our work</a>
-      </div>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section class="relative overflow-hidden rounded-3xl shine fade-in">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-70"></div>
+        <div class="relative px-6 py-20 md:py-28 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                Turn <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">messy data</span> into
+                <span class="whitespace-nowrap">revenue-ready insights.</span>
+            </h1>
+            <p class="mx-auto mt-5 max-w-2xl text-lg md:text-xl text-slate-600">
+                We design reliable, <span class="font-semibold">AI-ready data models</span>, dashboards and automations.
+                Less spreadsheet chaos. More decisions you trust—faster.
+            </p>
+            <div class="mt-8 flex items-center justify-center gap-3">
+                <a href="#contact" class="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 font-semibold shadow-lg hover:scale-105 hover:shadow-xl transition">Book a discovery call</a>
+                <a href="#work" class="rounded-full px-6 py-3 font-semibold border border-slate-300 hover:bg-slate-100 transition">See our work</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work with Horizontal Scroll -->
+    <section id="work" class="py-20">
+        <h2 class="text-4xl font-bold text-center tracking-tight fade-in">From questions to answers that move the needle</h2>
+        <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto fade-in" data-delay="0.1s">We turn raw, scattered data into decisions your leaders act on.</p>
 
-  <!-- Work with Auto Scroll -->
-  <section id="work" class="py-20 fade-in">
-    <h2 class="text-4xl font-bold text-center tracking-tight">From questions to answers that move the needle</h2>
-    <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">We turn raw, scattered data into decisions your leaders act on.</p>
+        <div class="mt-12 scrolling-container">
+            <div class="scroll-content">
+                <!-- Card 1 -->
+                <div class="scroll-item group rounded-2xl bg-white p-6 shadow-lg animated-card fade-in" data-delay="0.2s">
+                    <div class="flex items-center gap-4 mb-3">
+                        <svg class="w-10 h-10 text-blue-500 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m-9-4h9" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Sales & Margin Truth</h3>
+                    </div>
+                    <p class="text-slate-600">Unify orders, returns, discounts and fees for a single source of truth.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="scroll-item group rounded-2xl bg-white p-6 shadow-lg animated-card fade-in" data-delay="0.3s">
+                    <div class="flex items-center gap-4 mb-3">
+                        <svg class="w-10 h-10 text-green-500 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Customer Retention</h3>
+                    </div>
+                    <p class="text-slate-600">Segment RFM, predict churn, and trigger lifecycle journeys that raise LTV.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="scroll-item group rounded-2xl bg-white p-6 shadow-lg animated-card fade-in" data-delay="0.4s">
+                    <div class="flex items-center gap-4 mb-3">
+                        <svg class="w-10 h-10 text-purple-500 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Campaign ROI</h3>
+                    </div>
+                    <p class="text-slate-600">Tie spend to revenue with multi-touch attribution your CFO trusts.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="scroll-item group rounded-2xl bg-white p-6 shadow-lg animated-card fade-in" data-delay="0.5s">
+                    <div class="flex items-center gap-4 mb-3">
+                        <svg class="w-10 h-10 text-orange-500 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Customer Acquisition</h3>
+                    </div>
+                    <p class="text-slate-600">Analyze lead sources, pipeline velocity, and conversion rates.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="scroll-item group rounded-2xl bg-white p-6 shadow-lg animated-card fade-in" data-delay="0.6s">
+                    <div class="flex items-center gap-4 mb-3">
+                        <svg class="w-10 h-10 text-cyan-500 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-11 6V4" />
+                        </svg>
+                        <h3 class="text-xl font-semibold">Financial Forecasting</h3>
+                    </div>
+                    <p class="text-slate-600">Build predictive models for revenue, costs, and cash flow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="mt-12 scroll-container">
-      <div class="scroll-content gap-6">
-        <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-          <h3 class="text-xl font-semibold mb-2">Sales & Margin Truth</h3>
-          <p class="text-slate-600">Unify orders, returns, discounts and fees for a single source of truth.</p>
-        </div>
-        <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-          <h3 class="text-xl font-semibold mb-2">Customer Retention</h3>
-          <p class="text-slate-600">Segment RFM, predict churn, and trigger lifecycle journeys that raise LTV.</p>
-        </div>
-        <div class="group rounded-2xl bg-white p-6 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-          <h3 class="text-xl font-semibold mb-2">Campaign ROI</h3>
-          <p class="text-slate-600">Tie spend to revenue with multi-touch attribution your CFO trusts.</p>
-        </div>
-        <!-- Duplicate cards for smooth infinite scroll -->
-        <div class="group rounded-2xl bg-white p-6 shadow-lg">
-          <h3 class="text-xl font-semibold mb-2">Sales & Margin Truth</h3>
-          <p class="text-slate-600">Unify orders, returns, discounts and fees for a single source of truth.</p>
-        </div>
-        <div class="group rounded-2xl bg-white p-6 shadow-lg">
-          <h3 class="text-xl font-semibold mb-2">Customer Retention</h3>
-          <p class="text-slate-600">Segment RFM, predict churn, and trigger lifecycle journeys that raise LTV.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Toolkit with Horizontal Scroll -->
+    <section class="py-20">
+        <h3 class="text-3xl font-bold text-center fade-in">Our Toolkit</h3>
+        <p class="mt-2 text-center text-slate-600 max-w-xl mx-auto fade-in" data-delay="0.1s">We deliver results using industry-standard, enterprise-ready platforms.</p>
 
-  <!-- Toolkit with Auto Scroll -->
-  <section class="py-20 fade-in">
-    <h3 class="text-3xl font-bold text-center">Our Toolkit</h3>
-    <p class="mt-2 text-center text-slate-600 max-w-xl mx-auto">We deliver results using industry-standard, enterprise-ready platforms.</p>
+        <div class="mt-12 scrolling-container">
+            <div class="scroll-content">
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.2s">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" class="h-12 mx-auto mb-2" alt="Snowflake" />
+                    <p class="font-semibold">Snowflake</p>
+                </div>
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.3s">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_BigQuery_Logo.svg" class="h-12 mx-auto mb-2" alt="BigQuery" />
+                    <p class="font-semibold">BigQuery</p>
+                </div>
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.4s">
+                    <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" class="h-12 mx-auto mb-2" alt="dbt" />
+                    <p class="font-semibold">dbt</p>
+                </div>
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.5s">
+                    <img src="https://seeklogo.com/images/F/fivetran-logo-797D82E38D-seeklogo.com.png" class="h-12 mx-auto mb-2" alt="Fivetran" />
+                    <p class="font-semibold">Fivetran</p>
+                </div>
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.6s">
+                    <img src="https://airflow.apache.org/images/airflow-logo.png" class="h-12 mx-auto mb-2" alt="Airflow" />
+                    <p class="font-semibold">Airflow</p>
+                </div>
+                <div class="scroll-item group bg-white rounded-2xl p-6 shadow-md animated-card fade-in" data-delay="0.7s">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Apache_Spark_logo.svg" class="h-12 mx-auto mb-2" alt="Spark" />
+                    <p class="font-semibold">Spark</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="mt-12 scroll-container">
-      <div class="scroll-content gap-6">
-        <div class="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-[1.02] transition text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" class="h-12 mx-auto mb-2" alt="Snowflake" />
-          <p class="font-semibold">Snowflake</p>
+    <!-- Team -->
+    <section id="team" class="py-20 rounded-3xl bg-white shadow-xl px-6">
+        <h2 class="text-4xl font-bold text-center tracking-tight fade-in">Meet the team</h2>
+        <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto fade-in" data-delay="0.1s">Builders first. We ship reliable data foundations, not just slides.</p>
+        <div class="mt-12 grid gap-8 md:grid-cols-3">
+            <div class="bg-slate-50 p-8 rounded-2xl shadow-lg animated-card fade-in" data-delay="0.2s">
+                <img class="w-28 h-28 rounded-full mx-auto border-4 border-blue-600 mb-4" src="https://placehold.co/300x300/e0f2fe/0c4a6e?text=Prathmesh" alt="Prathmesh">
+                <h3 class="mt-4 text-xl font-semibold">Prathmesh</h3>
+                <p class="text-blue-700 font-medium text-sm">Data Engineering Lead</p>
+                <p class="mt-4 text-sm text-slate-600">
+                    Prathmesh builds <span class="font-bold">robust data foundations</span>. He transforms raw information into a <span class="font-bold">clean, reliable, and AI-ready format</span>, creating data pipelines you can trust every day.
+                </p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-2xl shadow-lg animated-card fade-in" data-delay="0.3s">
+                <img class="w-28 h-28 rounded-full mx-auto border-4 border-green-600 mb-4" src="https://placehold.co/300x300/dcfce7/065f46?text=Raja" alt="Raja">
+                <h3 class="mt-4 text-xl font-semibold">Raja</h3>
+                <p class="text-green-700 font-medium text-sm">Analytics Engineering Lead</p>
+                <p class="mt-4 text-sm text-slate-600">
+                    Raja turns data into <span class="font-bold">easy-to-understand reports and dashboards</span>. He provides insights that are <span class="font-bold">simple, visual, and actionable</span> for key decision-makers.
+                </p>
+            </div>
+            <div class="bg-slate-50 p-8 rounded-2xl shadow-lg animated-card fade-in" data-delay="0.4s">
+                <img class="w-28 h-28 rounded-full mx-auto border-4 border-purple-600 mb-4" src="https://placehold.co/300x300/ede9fe/5b21b6?text=Shubham" alt="Shubham">
+                <h3 class="mt-4 text-xl font-semibold">Shubham</h3>
+                <p class="text-purple-700 font-medium text-sm">Apps & Automation Lead</p>
+                <p class="mt-4 text-sm text-slate-600">
+                    Shubham specializes in <span class="font-bold">workflow automation and business apps</span>. He builds custom tools to make everyday processes smoother and faster, reducing manual work.
+                </p>
+            </div>
         </div>
-        <div class="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-[1.02] transition text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Google_BigQuery_Logo.svg" class="h-12 mx-auto mb-2" alt="BigQuery" />
-          <p class="font-semibold">BigQuery</p>
-        </div>
-        <div class="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-[1.02] transition text-center">
-          <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" class="h-12 mx-auto mb-2" alt="dbt" />
-          <p class="font-semibold">dbt</p>
-        </div>
-        <div class="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-[1.02] transition text-center">
-          <img src="https://seeklogo.com/images/F/fivetran-logo-797D82E38D-seeklogo.com.png" class="h-12 mx-auto mb-2" alt="Fivetran" />
-          <p class="font-semibold">Fivetran</p>
-        </div>
-        <div class="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-[1.02] transition text-center">
-          <img src="https://airflow.apache.org/images/airflow-logo.png" class="h-12 mx-auto mb-2" alt="Airflow" />
-          <p class="font-semibold">Airflow</p>
-        </div>
-        <!-- Duplicate for loop -->
-        <div class="group bg-white rounded-2xl p-6 shadow-md">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" class="h-12 mx-auto mb-2" alt="Snowflake" />
-          <p class="font-semibold">Snowflake</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team -->
-  <section id="team" class="py-20 rounded-3xl bg-white shadow-xl px-6 fade-in">
-    <h2 class="text-4xl font-bold text-center tracking-tight">Meet the team</h2>
-    <p class="mt-3 text-center text-slate-600 max-w-2xl mx-auto">Builders first. We ship reliable data foundations, not just slides.</p>
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      <div class="bg-slate-50 p-6 rounded-2xl shadow hover:scale-105 transition text-center">
-        <img class="w-28 h-28 rounded-full mx-auto border-4 border-blue-600" src="https://placehold.co/300x300/e0f2fe/0c4a6e?text=Prathmesh" alt="Prathmesh">
-        <h3 class="mt-4 text-xl font-semibold">Prathmesh</h3>
-        <p class="text-blue-700 font-medium text-sm">Data Engineering Lead</p>
-      </div>
-      <div class="bg-slate-50 p-6 rounded-2xl shadow hover:scale-105 transition text-center">
-        <img class="w-28 h-28 rounded-full mx-auto border-4 border-green-600" src="https://placehold.co/300x300/dcfce7/065f46?text=Raja" alt="Raja">
-        <h3 class="mt-4 text-xl font-semibold">Raja</h3>
-        <p class="text-green-700 font-medium text-sm">Analytics Engineering Lead</p>
-      </div>
-      <div class="bg-slate-50 p-6 rounded-2xl shadow hover:scale-105 transition text-center">
-        <img class="w-28 h-28 rounded-full mx-auto border-4 border-purple-600" src="https://placehold.co/300x300/ede9fe/5b21b6?text=Shubham" alt="Shubham">
-        <h3 class="mt-4 text-xl font-semibold">Shubham</h3>
-        <p class="text-purple-700 font-medium text-sm">Apps & Automation Lead</p>
-      </div>
-    </div>
-  </section>
+    <!-- FAQ -->
+    <section class="py-20">
+        <h2 class="text-4xl font-bold text-center fade-in">FAQs</h2>
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+            <div class="bg-white p-6 border rounded-2xl shadow animated-card fade-in" data-delay="0.2s">
+                <h3 class="font-semibold">How fast can we see value?</h3>
+                <p class="text-slate-600 mt-1">Most clients ship a dashboard in 6–8 weeks.</p>
+            </div>
+            <div class="bg-white p-6 border rounded-2xl shadow animated-card fade-in" data-delay="0.3s">
+                <h3 class="font-semibold">Do you work with our stack?</h3>
+                <p class="text-slate-600 mt-1">Yes—Snowflake/BigQuery/Redshift + dbt/Fivetran/Airflow and BI tools like Looker, Power BI and Superset.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- FAQ -->
-  <section class="py-20 fade-in">
-    <h2 class="text-4xl font-bold text-center">FAQs</h2>
-    <div class="mt-12 grid gap-8 md:grid-cols-2">
-      <div class="bg-white p-6 border rounded-2xl shadow hover:scale-105 transition">
-        <h3 class="font-semibold">How fast can we see value?</h3>
-        <p class="text-slate-600 mt-1">Most clients ship a dashboard in 6–8 weeks.</p>
-      </div>
-      <div class="bg-white p-6 border rounded-2xl shadow hover:scale-105 transition">
-        <h3 class="font-semibold">Do you work with our stack?</h3>
-        <p class="text-slate-600 mt-1">Yes—Snowflake/BigQuery/Redshift + dbt/Fivetran/Airflow and BI tools like Looker, Power BI and Superset.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <footer id="contact" class="mb-10 rounded-3xl bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-14 text-center fade-in">
-    <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Ready to unlock your data’s potential?</h2>
-    <p class="mt-3 text-white/90 max-w-2xl mx-auto">Let’s explore your goals and identify the fastest path to measurable impact.</p>
-    <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-3">
-      <a href="mailto:contact@zentava.ai" class="bg-white text-blue-900 rounded-full px-7 py-3 font-semibold shadow-lg hover:scale-105 transition">Contact us</a>
-      <a href="https://zentava.ai" target="_blank" rel="noopener" class="rounded-full ring-1 ring-white/60 px-7 py-3 font-semibold hover:bg-white/10 transition">Learn more</a>
-    </div>
-  </footer>
+    <!-- CTA -->
+    <footer id="contact" class="mb-10 rounded-3xl bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-14 text-center fade-in" data-delay="0.1s">
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">Ready to unlock your data’s potential?</h2>
+        <p class="mt-3 text-white/90 max-w-2xl mx-auto">Let’s explore your goals and identify the fastest path to measurable impact.</p>
+        <div class="mt-8 flex flex-col md:flex-row items-center justify-center gap-3">
+            <a href="mailto:contact@zentava.ai" class="bg-white text-blue-900 rounded-full px-7 py-3 font-semibold shadow-lg hover:scale-105 transition">Contact us</a>
+            <a href="https://zentava.ai" target="_blank" rel="noopener" class="rounded-full ring-1 ring-white/60 px-7 py-3 font-semibold hover:bg-white/10 transition">Learn more</a>
+        </div>
+    </footer>
 
 </div>
 
 <script>
-  // Scroll reveal
-  const sections = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('show'); }
-    });
-  }, { threshold: 0.15 });
-  sections.forEach(sec => observer.observe(sec));
+    // Scroll reveal for staggered, animated card entrance
+    const animatedElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.dataset.delay || '0s';
+                entry.target.style.transitionDelay = delay;
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+    animatedElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
